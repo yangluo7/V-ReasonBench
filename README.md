@@ -54,8 +54,6 @@ python evaluate.py --task visual_symmetry
 python evaluate.py --task math code sudoku
 ```
 
----
-
 ## 📁 Dataset Structure
 
 All tasks follow a standardized directory layout:
@@ -70,12 +68,6 @@ VReason-Bench/
       predictions/     # Auto-generated: extracted frames/results
       eval_results/    # Auto-generated: JSON evaluation results
 ```
-
-**Naming conventions:**
-- All tasks use 2-digit indices: `01.png`, `01.mp4`, `02.png`, etc.
-- Same base filename used across GT, inputs, and video_outputs for each test case
-
----
 
 ## 📊 Output Format
 
@@ -117,8 +109,6 @@ Each task generates a unified JSON output at `evaluations/<TaskName>/eval_result
 - **`mean_score`**: Average score across all predictions
 - **`task_metrics`**: Task-specific metrics (accuracy, IoU, Delta-E, etc.)
 
----
-
 ## 🎯 Supported Tasks
 
 ### Structured Problem-Solving
@@ -155,8 +145,6 @@ Each task generates a unified JSON output at `evaluations/<TaskName>/eval_result
 | **communicating vessels** | Fluid dynamics | `GT/<idx>.csv` | Mask-specific pixel accuracy |
 | **block_slide** | Block sliding puzzle | `GT/<idx>_gt.png` + masks | Shape/background accuracy |
 
----
-
 ## 📈 Evaluation Metrics
 
 ### Pass@k Calculation
@@ -165,8 +153,6 @@ For each model-GT pair:
 1. Count predictions: k (should be 5)
 2. Count passed: predictions with `score >= threshold`
 3. Model-level pass@k = average across all GTs
-
----
 
 ## 📝 Citation
 
