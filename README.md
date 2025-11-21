@@ -157,10 +157,13 @@ For each model-GT pair:
 ## 📝 Citation
 
 ```bibtex
-@article{vreason-bench,
-  title={VReason-Bench: A Comprehensive Benchmark for Video Reasoning},
-  author={Your Name},
-  journal={arXiv preprint},
-  year={2025}
+@misc{luo2025vreasonbenchunifiedreasoningbenchmark,
+      title={V-ReasonBench: Toward Unified Reasoning Benchmark Suite for Video Generation Models}, 
+      author={Yang Luo and Xuanlei Zhao and Baijiong Lin and Lingting Zhu and Liyao Tang and Yuqi Liu and Ying-Cong Chen and Shengju Qian and Xin Wang and Yang You},
+      year={2025},
+      eprint={2511.16668},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2511.16668}, 
 }
 ```
