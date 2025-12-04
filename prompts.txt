@@ -1,0 +1,94 @@
+==================================================
+TASK PROMPTS
+==================================================
+
+Shape_fit:
+The scene shows some colored pieces, and a panel with some holes. Each colored piece fits into one and only one hole. A hand grabs each colored piece and puts it into an empty hole that has the exact same shape - if it doesn't fit, the hand tries another hole. All the objects must be placed in their respective holes.
+
+Code:
+Complete this code problem. Enter the answer behind "# Output:". Do not modify the existing code.
+
+Math:
+Complete the math problems in the picture. Enter the final answer directly. Do not change anything else in the picture. Static camera, no zoom, no pan, no dolly.
+
+Color_connect:
+Draw two curves, one connecting each pair of circles of the same color.
+
+Tic_tac_toe:
+Given the current state of the Tic-Tac-Toe board in the image, predict the next move that results in a win for the player whose turn it is. Output the position of the winning move.
+
+Rule_follow:
+Modify the lower-right grid to adhere to the rule established by the other grids. You can fill cells, clear cells, or change a cell's color in the lower-right grid only. Don't modify any of the other grids. Static scene, no zoom, no pan, no dolly.
+
+Sequence_completion:
+Finish the incomplete frames of this shape-sequence puzzle. Do not change given patterns. Each row contains equal-sized square cells outlined in black on white. Shapes are solid black arrows, dots, or stripes that obey a clear mathematical rule (rotation, translation, scaling, or toggling). Produce the missing panels so the sequence remains consistent and has a single logical solution.
+
+Block_slide:
+Given the initial rendered frame of a rigid rectangular block resting at the top of the incline, along with the provided annotations for slope length L_slope, slope angle theta, friction coefficients mu_slope and mu_plane, block length and height, and gravitational acceleration g = 9.81 m/s^2, predict the final frame that shows where the block comes to rest after sliding. Assume ideal planar contact, ignore air resistance, elastic collisions, or any secondary impacts at the slope-foot.
+
+Communicating_vessel:
+A connected container (communicating vessel) with two vertical tubes filled with liquid. The liquid level in both tubes changes slowly and smoothly until it reaches equilibrium, where the levels remain still. The motion should appear realistic and continuous, with no splashing or turbulence.
+
+Visual_analogy:
+Create a smooth animation to generate the missing object in the lower right region and solve the visual analogy. The original three objects must remain still. Static shot, no zoom no pan no dolly.
+
+==================================================
+SUDOKU PROMPTS
+==================================================
+4x4:
+Create a static, smooth, animation that solves the given 4x4 sudoku. Enter the missing numbers one by one. Do not change anything else in the picture. Only fill the numbers in the empty cells so the sudoku is solved properly. A cursor moves and fills the correct number in the empty boxes.
+
+9x9:
+Create a static, smooth, animation that solves the given 9x9 sudoku. Enter the missing numbers one by one. Do not change anything else in the picture. Only fill the numbers in the empty cells so the sudoku is solved properly. A cursor moves and fills the correct number in the empty boxes.
+
+==================================================
+VISUAL SYMMETRY PROMPTS
+==================================================
+
+vertical:
+Instantly reflect this pattern along the central, vertical axis while keeping the existing colored pattern without modification. Static camera perspective, no zoom or pan.
+
+horizontal:
+Instantly reflect this pattern along the central, horizontal axis while keeping the existing colored pattern without modification. Static camera perspective, no zoom or pan.
+
+rotational:
+Instantly rotate this pattern $180^\circ$ along the central, vertical axis while keeping the existing colored pattern without modification. Static camera perspective, no zoom or pan.
+
+diagonal:
+Instantly reflect this pattern along the main diagonal axis (top-left to bottom-right) while keeping the existing colored pattern without modification. Static camera perspective, no zoom or pan.
+
+
+==================================================
+TEMPERATURE PROMPTS
+==================================================
+
+00:
+A crystal-clear ice cube resting on a sunlit wooden deck at midday, warm golden light reflecting off the wet surface, tiny droplets already forming around the cube
+
+01:
+A glittering ice cube embedded in a block of dry ice fog, surrounded by swirling cold vapor in a laboratory setting.
+
+02:
+A pristine ice cube perched on a sizzling cast-iron skillet sitting over an open campfire, wisps of steam rising around it.
+
+03:
+A single ice cube nestled on a snow-covered pine branch during a gray winter morning, frosty air surrounding the cube.
+
+04:
+A solitary ice cube floating in a glass of iced tea on a café patio during a mild spring evening, condensation on the glass.
+
+05:
+A thick ice cube positioned beneath a heat lamp in a photography studio, dramatic reflections highlighting the dripping water
+
+06:
+An ice cube placed on a marble countertop inside an air-conditioned kitchen, soft ambient lighting, room-temperature environment.
+
+07:
+An ice cube resting on a beach towel near the shoreline, tropical sun overhead, waves gently lapping close by.
+
+08:
+An ice cube sitting inside a stainless-steel freezer drawer, illuminated by cool blue LED lighting, frost crystals forming on nearby surfaces.
+
+09:
+An ice cube suspended inside a cryogenic chamber filled with blue-tinted mist and frost-covered metal walls.
+
