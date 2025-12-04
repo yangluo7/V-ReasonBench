@@ -15,7 +15,6 @@ A comprehensive benchmark for evaluating video generation models across **four r
 - 🔧 **Unified evaluation framework** with automated scoring
 - 📁 **Standardized dataset** with clear input-output pairs
 
----
 
 ## 📋 TODOs
 
@@ -23,7 +22,6 @@ A comprehensive benchmark for evaluating video generation models across **four r
 - [x] Release dataset and eval code
 - [ ] Release data generation code
 
----
 
 ## 🚀 Quick Start
 
@@ -72,7 +70,6 @@ python evaluate.py --generated_videos ./my_videos --task math code sudoku
 
 Results are saved to `evaluations/<TaskName>/eval_results/<task_name>_eval.json`
 
----
 
 ## 📂 Dataset
 
@@ -86,7 +83,6 @@ The `dataset/` folder contains input images for all benchmark tasks in a flat st
 *With subtype:* `<task_name>_<subtype>_<index>.png`
 - Example: `tic_tac_toe_3_05.png`, `math_level1_2_07.png`
 
----
 
 ## 🎬 Video Generation
 
@@ -108,7 +104,6 @@ To generate videos for evaluation, use inputs from `dataset/` and prompts from `
 - 4 visual symmetry prompts (vertical, horizontal, rotational, diagonal)
 - 10 temperature scenario prompts (different ice melting conditions)
 
----
 
 ## 🎯 Supported Tasks
 
@@ -146,7 +141,6 @@ To generate videos for evaluation, use inputs from `dataset/` and prompts from `
 | **communicating vessels** | Fluid dynamics | `GT/<idx>.csv` | Mask-specific pixel accuracy |
 | **block_slide** | Block sliding puzzle | `GT/<idx>_gt.png` + masks | Shape/background accuracy |
 
----
 
 ## 📊 Evaluation Details
 
@@ -202,7 +196,6 @@ Results are saved to `evaluations/<TaskName>/eval_results/<task_name>_eval.json`
 1. For each (model, GT) pair, check if any of the k predictions pass (score ≥ threshold)
 2. Average success rate across all GTs for each model
 
----
 
 ## 📝 Citation
 
