@@ -1,0 +1,10 @@
+torch
+requests
+scikit-image
+opencv-python
+numpy
+pandas
+matplotlib
+tqdm
+pillow
+git+https://github.com/facebookresearch/sam2.git
