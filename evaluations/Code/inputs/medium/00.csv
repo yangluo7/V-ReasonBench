@@ -1,0 +1,11 @@
+code
+"class Solution:
+    def hasAllCodes(self, s: str, k: int) -> bool:
+        substrings = product(['0', '1'], repeat=k)
+        for substring in substrings:
+            string = ''.join(substring)
+            if string not in s:
+                return False
+        return True
+
+# Input: s = ""0110"", k = 1"

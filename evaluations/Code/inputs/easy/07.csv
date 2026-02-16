@@ -1,0 +1,14 @@
+code
+"from typing import List
+
+class Solution:
+    def buildArray(self, target: List[int], n: int) -> List[str]:
+        operations = []
+        n = min(n, target[-1]) + 1
+        for i in range(1, n):
+            operations += [""Push""]
+            if i not in target:
+                operations += [""Pop""]
+        return operations
+
+# Input: target = [1,3], n = 3"

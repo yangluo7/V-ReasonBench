@@ -58,15 +58,16 @@ def _vlm_shape_check(generated_image_path: str, first_frame_image_path: str, cus
     gen_b64 = encode_image(generated_image_path)
     first_b64 = encode_image(first_frame_image_path)
     
+    # Gemini API format
     messages = [
         {
             "role": "user",
-            "content": [
-                {"type": "text", "text": "First Image:"},
-                {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{gen_b64}"}},
-                {"type": "text", "text": "Second Image:"},
-                {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{first_b64}"}},
-                {"type": "text", "text": custom_prompt},
+            "parts": [
+                {"text": "First Image:"},
+                {"inline_data": {"mime_type": "image/png", "data": gen_b64}},
+                {"text": "Second Image:"},
+                {"inline_data": {"mime_type": "image/png", "data": first_b64}},
+                {"text": custom_prompt},
             ],
         }
     ]

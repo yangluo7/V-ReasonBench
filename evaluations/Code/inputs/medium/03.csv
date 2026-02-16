@@ -1,0 +1,16 @@
+code
+"from typing import List
+
+class Solution:
+    def validateStackSequences(self, pushed: List[int], popped: List[int]) -> bool:
+        stack = []
+        for push in pushed:
+            stack.append(push)
+            while stack[-1] == popped[0]:
+                stack.pop()
+                popped.pop(0)
+                if not stack:
+                    break
+        return not stack
+
+# Input: pushed = [1,2,3,4,5], popped = [4,3,5,1,2]"

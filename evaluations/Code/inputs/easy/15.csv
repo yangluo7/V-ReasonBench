@@ -1,0 +1,16 @@
+code
+"class Solution:
+    def interpret(self, command: str) -> str:
+        command = list(command)
+        l = False
+        for i, char in enumerate(command):
+            if char == 'l':
+                l = True
+            elif char == '(':
+                command[i] = ''
+            elif char == ')':
+                command[i] = '' if l else 'o'
+                l = False
+        return ''.join(command)
+
+# Input: command = ""G()()()()(al)"""

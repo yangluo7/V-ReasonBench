@@ -106,14 +106,14 @@ _VLM_HEADERS = {"Authorization": f"Bearer {_VLM_SECRET}"} if _VLM_SECRET else {}
 
 
 def _build_image_messages(title: str, image_b64: str, prompt_text: str) -> List[Dict[str, Any]]:
-    """Helper to construct a single-image VLM message payload."""
+    """Helper to construct a single-image VLM message payload (Gemini API format)."""
     return [
         {
             "role": "user",
-            "content": [
-                {"type": "text", "text": title},
-                {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{image_b64}"}},
-                {"type": "text", "text": prompt_text},
+            "parts": [
+                {"text": title},
+                {"inline_data": {"mime_type": "image/png", "data": image_b64}},
+                {"text": prompt_text},
             ],
         }
     ]
@@ -183,22 +183,19 @@ def compare_images(ground_truth_path: str, generated_path: str, custom_prompt: O
         new_h = max(1, int(round(h * 0.5)))
         return img.resize((new_w, new_h), Image.LANCZOS)
 
-    gt_img = Image.open(ground_truth_path).convert("RGB")
-    gen_img = Image.open(generated_path).convert("RGB")
-    gt_resized = _resize_half_keep_ratio(gt_img)
-    gen_resized = _resize_half_keep_ratio(gen_img)
-    gt_b64 = _pil_to_b64(gt_resized, "JPEG")
-    gen_b64 = _pil_to_b64(gen_resized, "JPEG")
+    # Encode images directly without resizing (Gemini API format)
+    gt_b64 = encode_image(ground_truth_path)
+    gen_b64 = encode_image(generated_path)
     
-    """Compare two images using VLM API."""
+    # Gemini API format
     messages = [{
         "role": "user",
-        "content": [
-            {"type": "text", "text": "Ground Truth Image:"},
-            {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{gt_b64}"}},
-            {"type": "text", "text": "Generated Image:"},
-            {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{gen_b64}"}},
-            {"type": "text", "text": custom_prompt or _DEFAULT_COMPARISON_PROMPT},
+        "parts": [
+            {"text": "Ground Truth Image:"},
+            {"inline_data": {"mime_type": "image/png", "data": gt_b64}},
+            {"text": "Generated Image:"},
+            {"inline_data": {"mime_type": "image/png", "data": gen_b64}},
+            {"text": custom_prompt or _DEFAULT_COMPARISON_PROMPT},
         ],
     }]
     

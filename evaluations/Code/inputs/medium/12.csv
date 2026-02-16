@@ -1,0 +1,19 @@
+code
+"class Solution:
+    def removeLeafNodes(self, root: TreeNode, target: int) -> TreeNode:
+        self.dfs(root, target)
+        if root and root.val == target and not root.left and not root.right:
+            root = None
+        return root
+
+    def dfs(self, root, target):
+        if not root:
+            return
+        self.dfs(root.left, target)
+        self.dfs(root.right, target)
+        if root.left and root.left.val == target and not root.left.left and not root.left.right:
+            root.left = None
+        if root.right and root.right.val == target and not root.right.left and not root.right.right:
+            root.right = None
+
+# Input: root = [1,2,null,2,null,2], target = 2"

@@ -1,0 +1,32 @@
+code
+"from typing import List
+
+class Solution:
+    def minJumps(self, arr: List[int]) -> int:
+        indices = {}
+        visited = set()
+        queue = [[0, 0]] # index, step
+        length = len(arr)
+        for ind, num in enumerate(arr):
+            if num not in indices:
+                indices[num] = []
+            indices[num].append(ind)
+        while queue:
+            index, steps = queue.pop(0)
+            if index == length - 1:
+                break
+            if indices[arr[index]]:
+                for i in indices[arr[index]]:
+                    if i not in visited:
+                        visited.add(i)
+                        queue.append([i, steps+1])
+                indices[arr[index]] = []
+            if index - 1 > 0 and index - 1 not in visited:
+                visited.add(index-1)
+                queue.append([index-1, steps+1])
+            if index + 1 not in visited:
+                visited.add(index+1)
+                queue.append([index+1, steps+1])
+        return steps
+
+# Input: arr = [100,-23,-23,404,100,23,23,23,3,404]"

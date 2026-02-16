@@ -1,0 +1,20 @@
+code
+"from typing import List
+
+class Solution:
+    def constructArray(self, n: int, k: int) -> List[int]:
+        array = []
+        visited = set()
+        k += 1
+        for i in range(n):
+            i += 1
+            if i not in visited:
+                array.append(i)
+                visited.add(i)
+            if k not in visited:
+                array.append(k)
+                visited.add(k)
+                k -= 1
+        return array
+
+# Input: n = 3, k = 1"

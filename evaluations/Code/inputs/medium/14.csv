@@ -1,0 +1,13 @@
+code
+"from typing import List
+
+class Solution:
+    def findSmallestSetOfVertices(self, n: int, edges: List[List[int]]) -> List[int]:
+        start = set()
+        end = set()
+        for edge in edges:
+            start.add(edge[0])
+            end.add(edge[1])
+        return start.difference(end)
+
+# Input: n = 6, edges = [[0,1],[0,2],[2,5],[3,4],[4,2]]"

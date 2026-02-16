@@ -1,0 +1,19 @@
+code
+"class Solution:
+    def brokenCalc(self, X: int, Y: int) -> int:
+        operations = 0
+        queue = [Y]
+        while queue:
+            Y = queue.pop(0)
+
+            if not Y % 2:
+                queue.append(Y//2)
+            else:
+                queue.append(Y+1)
+
+            if X >= Y:
+                return operations + X - Y
+
+            operations += 1
+
+# Input: X = 1024, Y = 1"

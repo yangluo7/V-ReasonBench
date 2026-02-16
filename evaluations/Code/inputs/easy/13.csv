@@ -1,0 +1,16 @@
+code
+"from typing import List
+
+class Solution:
+    def addToArrayForm(self, A: List[int], K: int) -> List[int]:
+        n = 0
+        for a in A:
+            n = n*10 + a
+        n += K
+        A = []
+        while n > 0:
+            A.append(n%10)
+            n //= 10
+        return A[::-1] if A else [0]
+
+# Input: A = [1,2,0,0], K = 34"

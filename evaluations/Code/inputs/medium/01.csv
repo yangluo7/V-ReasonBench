@@ -1,0 +1,11 @@
+code
+"from typing import List
+
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        nums_set = set(nums)
+        for num in nums_set:
+            if nums.count(num) == 1:
+                return num
+
+# Input: [2,2,3,2]"

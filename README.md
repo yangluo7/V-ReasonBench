@@ -40,12 +40,12 @@ wget https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_large
 
 ### API Configuration
 
-Some tasks require VLM API for evaluation. Set these environment variables:
+Some tasks require VLM (Gemini) API for evaluation. Set these environment variables:
 
 ```bash
 export VLM_API_KEY="your_api_key_here"
 export VLM_API_URL="your_api_url_here"
-export VLM_MODEL="gemini-2.5-pro"  # Optional, default value
+export VLM_MODEL="gemini-2.5-pro" 
 ```
 
 **Tasks requiring VLM API**: code, math, shape_fit, sudoku, temperature, color_connect
