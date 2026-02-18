@@ -64,8 +64,8 @@ python evaluate.py --generated_videos ./my_videos --task math code sudoku
 
 **Supported tasks:** `math`, `code`, `sudoku`, `tic_tac_toe`, `shape_fit`, `visual_symmetry`, `color_connect`, `sequence_completion`, `visual_analogy`, `rule_follow`, `temperature`, `communicating_vessels`, `block_slide`
 
-**Video naming format:** `<input_name>_<model>_seed<N>.mp4`
-- Example: `shape_fit_00_model1_seed0.mp4`
+**Video naming format:** `<input_name>_<model>_<gt_index>_seed<N>.mp4`
+- Example: `shape_fit_model1_00_seed0.mp4`
 - Each (model, input) pair should have 5 seeds (seed0-seed4) for Pass@5 evaluation
 
 Results are saved to `evaluations/<TaskName>/eval_results/<task_name>_eval.json`
