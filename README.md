@@ -92,7 +92,7 @@ To generate videos for evaluation, use inputs from `dataset/` and prompts from `
 1. Pick an input image from `dataset/` (e.g., `shape_fit_00.png`)
 2. Get the corresponding task prompt from `prompts.txt`
 3. Generate 5 videos per input with different seeds (seed0-seed4)
-4. Name outputs: `<input_name>_<model>_seed<N>.mp4`
+4. Name outputs: `<input_name>_<model>_<gt_index>_seed<N>.mp4`
 
 **Examples:**
 - Input: `shape_fit_00.png` → Outputs: `shape_fit_00_model1_seed0.mp4`, `shape_fit_00_model1_seed1.mp4`, ...
